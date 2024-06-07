@@ -4,7 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 function Form({ setTodos }) {
     const handleSubmit = (event) => {
         event.preventDefault();
-        const value = event.target.todo.value;
+        const value = event.target.todo.value.trim();
+        if (value.length === 0) {
+            // No agregar el item si el valor está vacío
+            alert("Please enter a valid todo item.");
+            return;
+        }
         setTodos((prevTodos) => [
             ...prevTodos,
             { title: value, id: uuidv4(), is_completed: false },]);

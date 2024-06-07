@@ -33,6 +33,10 @@ function Item({ item, setTodos }) {
     setEditing(true);
   };
 
+  const handleDelete = () => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== item.id));
+  };
+
   const handleInpuSubmit = (event) => {
     event.preventDefault();
     setEditing(false);
@@ -93,17 +97,19 @@ function Item({ item, setTodos }) {
             </p>
           </button>
           <div className="todo_items_right">
-            <button onClick={handleEdit}>
-              <span className="visually-hidden">Edit</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.2 4.81a1.19 1.19 0 0 0-1.69 0l-11 11L2 20l5.19-1 11-11a1.19 1.19 0 0 0 0-1.69z" />
-              </svg>
+          <button onClick={handleEdit} className="edit-button">
+              <span className="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.2 4.81a1.19 1.19 0 0 0-1.69 0l-11 11L2 20l5.19-1 11-11a1.19 1.19 0 0 0 0-1.69z"/>
+                </svg>
+              </span>
             </button>
-            <button>
-              <span className="visually-hidden">Delete</span>
-              <svg>
-                <path d="" />
-              </svg>
+            <button onClick={handleDelete} className="delete-button">
+              <span className="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm7.5-9h1v9h-1v-9zm-3 0h1v9h-1v-9zm7-5V4H7v1H3v2h18V5h-4z"/>
+                </svg>
+              </span>
             </button>
           </div>
         </>
