@@ -31,9 +31,9 @@ function Item({ item, setTodos }) {
       <button className="todo_items_left" onClick={completeTodo}>
       <svg width="24" height="24" viewBox="0 0 24 24">
           {/* Círculo de borde */}
-          <circle cx="12" cy="12" r="10" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+          <circle cx="12" cy="12" r="10" fill="none" stroke="#22C55E" strokeWidth="2" />
           {/* Círculo de relleno */}
-          <circle cx="12" cy="12" r="9" fill={item.is_completed ? "#22C55E" : "#FF0000"} />
+          <circle cx="12" cy="12" r="9" fill={item.is_completed ? "#22C55E" : "transparent"} />
         </svg>
         <p style={item.is_completed ? { textDecoration: "line-through" } : {}}>
           {item?.title}
