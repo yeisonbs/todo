@@ -33,7 +33,7 @@ function Item({ item, setTodos }) {
           {/* Círculo de borde */}
           <circle cx="12" cy="12" r="10" fill="none" stroke="#0d0d0d" strokeWidth="2" />
           {/* Círculo de relleno */}
-          <circle cx="12" cy="12" r="9" fill={item.is_completed ? "#22C55E" : "transparent"} />
+          <circle cx="12" cy="12" r="9" fill={item.is_completed ? "#22C55E" : "#FF0000"} />
         </svg>
         <p style={item.is_completed ? { textDecoration: "line-through" } : {}}>
           {item?.title}
